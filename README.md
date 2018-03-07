@@ -3,6 +3,10 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+This project covers the following reference
+- ember-mirage usage for mocking api
+- ember validation (in-progress)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
@@ -47,6 +51,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 Specify what it takes to deploy your app.
 
+
+
 ## Further Reading / Useful Links
 
 * [ember.js](https://emberjs.com/)
@@ -54,3 +60,6 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+* My links
+  * http://esbanarango.github.io/ember-model-validator
