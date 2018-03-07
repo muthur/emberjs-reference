@@ -61,5 +61,12 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
-* My links
+* Ember Mirage
+  * [ember mirage quick start] (http://www.ember-cli-mirage.com/docs/v0.1.x/quickstart/)
+  * [Faker api reference](https://github.com/marak/Faker.js/)
+  * Tutorial/Examples: Mocking api backend with mirage
+    * [Mock api backend with mirage](https://emberigniter.com/mock-json-api-backend-with-mirage/)
+    * [Ember CLI Mirage A Tutorial With Examples](http://www.programwitherik.com/ember-mirage-tutorial-and-examples/)
+
+* Others
   * http://esbanarango.github.io/ember-model-validator
