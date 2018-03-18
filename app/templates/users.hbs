@@ -1,5 +1,8 @@
+<div>
+<div class="heading">User List</div>
 {{#each model as |user|}}
-  {{user.firstName}} {{user.lastName}}--({{user.email}})<br/>
+  <div class='row-item'>{{user.firstName}} {{user.lastName}}--({{user.email}})</div><br/>
 {{/each}}
 
 {{outlet}}
+</div>

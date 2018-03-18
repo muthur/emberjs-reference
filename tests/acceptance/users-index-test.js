@@ -1,15 +1,18 @@
 import { module, test } from 'qunit';
-import { visit, currentURL } from '@ember/test-helpers';
+import { visit, currentURL, find, findAll } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
+import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 
 module('Acceptance | users index', (hooks) => {
   setupApplicationTest(hooks);
+  setupMirage(hooks);
 
-  test('visiting /users', async (assert) => {
+  test('visiting /users should display user information', async (assert) => {
     server.createList("user", 5);
     await visit('/users');
 
     assert.equal(currentURL(), '/users');
-    assert.equal(find('.user-row'),5)
+    assert.equal(find('.heading').textContent, 'User List'); //EmberJs for testing is moving away from Jquery dependency
+    assert.equal(findAll('.row-item').length,5);
   });
 });
