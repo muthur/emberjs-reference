@@ -1,7 +1,7 @@
 <div>
 <div class="heading">User List</div>
 {{#each model as |user|}}
-  <div class='row-item'>{{user.firstName}} {{user.lastName}}--({{user.email}})</div><br/>
+  <div class='row-item'><span class='test-user-firstName'>{{user.firstName}}</span> {{user.lastName}}--({{user.email}})</div><br/>
 {{/each}}
 
 {{outlet}}
