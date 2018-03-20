@@ -4,7 +4,8 @@ This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
 This project covers the following reference
-- ember-mirage usage for mocking api
+- Usage of ember-mirage for mocking api during development
+- Usage of ember-mirage for writing applicationTest/AcceptanceTest
 - ember validation (in-progress)
 
 ## Prerequisites
