@@ -1,16 +1,14 @@
 <div class="layout-column">
   {{paper-input class="flex-100" label="Card number" type="number" value=cardNumber onChange=(action (mut cardNumber))}}
   <div class="layout-row">
-    {{paper-input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}} {{paper-input
-    class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
+    {{paper-input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}} {{paper-input class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
   </div>
   {{paper-input class="flex-100" label="Name on Card" type="string" value=nameOnCard onChange=(action (mut nameOnCard))}}
   <div class="layout-row">
-    {{paper-input class="flex-50" label="Zip Code" type="string" value=zipCode onChange=(action (mut zipCode))}} 
-    {{#paper-select class="flex-50" label="Country" options=countries selected=selectedCountry onChange=(action (mut selectedCountry)) as |country|}}
-      {{country.abbrev}} 
+    {{paper-input class="flex-50" label="Zip Code" type="string" value=zipCode onChange=(action (mut zipCode))}}
+    {{#paper-select class="flex-50" label="Country" options=countries selected=selectedCountry onChange=(action (mut selectedCountry))
+      as |country|}}
+      {{country.abbrev}}
     {{/paper-select}}
   </div>
 </div>
-
-{{selectedCountry}}
