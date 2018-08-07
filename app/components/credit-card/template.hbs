@@ -1,5 +1,5 @@
 <div class="layout-column">
-  {{paper-input class="flex-100" label="Card number" type="number" value=cardNumber onChange=(action (mut cardNumber))}}
+  {{paper-input class="flex-100" label="Card number" type="number" value=cardNumber errors=errors.cardNumber isTouched=(gt errors.cardNumber.length 0) onChange=(action (mut cardNumber))}}
   <div class="layout-row">
     {{paper-input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}} {{paper-input class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
   </div>
