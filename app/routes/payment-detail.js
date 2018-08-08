@@ -5,6 +5,6 @@ export default Route.extend({
     /*controller.set("errors", {
       cardNumber: ["Card number is invalid"]
     });*/
-    controller.set("cardNumber",7867777867867876);
+    controller.set("cardNumber", 7867777867867876);
   }
 });

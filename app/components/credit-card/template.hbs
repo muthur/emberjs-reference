@@ -1,24 +1,31 @@
+{{#paper-form onValidityChange=(action "onValidityChange") as |form|}}
 <div class="layout-column">
-  {{paper-input class="flex-100" 
-    label="Card number" 
-    type="number" 
-    value=cardNumber 
-    errors=errors.cardNumber 
-    isTouched=(gt errors.cardNumber.length 0) 
+  {{form.input class="flex-100"
+    label="Card number"
+    type="number"
+    value=cardNumber
+    errors=errors.cardNumber
+    isTouched=(gt errors.cardNumber.length 0)
+    required=true
+    maxlength=16
+    errorMessages=(hash maxlength="Maximum length exceeded." )
     customValidations=cardNumberValidation
-    onChange=(action (mut cardNumber))}}
+    onChange=(action (mut cardNumber))
+    }}
   <div class="layout-row">
-    {{paper-input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}} 
-    {{paper-input class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
+    {{form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}}
+    {{form.input class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
   </div>
-  {{paper-input class="flex-100" 
-    label="Name on Card" 
-    type="string" 
-    value=nameOnCard 
+  {{form.input class="flex-100"
+    label="Name on Card"
+    type="string"
+    value=nameOnCard
     onChange=(action (mut nameOnCard))}}
   <div class="layout-row">
-    {{paper-input class="flex-50" label="Zip Code" type="string" value=zipCode onChange=(action (mut zipCode))}} {{#paper-select
+    {{form.input class="flex-50" label="Zip Code" type="string" value=zipCode onChange=(action (mut zipCode))}}
+    {{#form.select
     class="flex-50" label="Country" options=countries selected=selectedCountry onChange=(action (mut selectedCountry)) as
-    |country|}} {{country.abbrev}} {{/paper-select}}
+    |country|}} {{country.abbrev}} {{/form.select}}
   </div>
 </div>
+{{/paper-form}}
