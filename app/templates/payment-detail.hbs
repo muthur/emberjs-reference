@@ -9,7 +9,7 @@
   onValidityChange=(action "onCreditCardValidityChange")
 }}
 
-{{cardNumber}}
-creditCardInfoIsValid{{creditCardInfoIsValid}}
-
 {{#paper-button raised=true primary=true disabled=(if (not creditCardInfoIsValid) true null) }}Add Payment{{/paper-button}}
+<br/>
+<br/> CardNumber : {{cardNumber}}
+<br/> creditCardInfoIsValid : {{creditCardInfoIsValid}}

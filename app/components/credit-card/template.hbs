@@ -1,8 +1,8 @@
 {{#paper-form onValidityChange=(action "onValidityChange") as |form|}}
   <div class="layout-column">
     {{#form.input class="flex-100" label="Card number" type="number" value=cardNumber errors=errors.cardNumber isTouched=(gt
-      errors.cardNumber.length 0) required=true maxlength=16 errorMessages=(hash maxlength="Maximum length exceeded." ) customValidations=cardNumberValidation
-      onChange=(action (mut cardNumber)) hideAllMessages=true as |input|}}
+      errors.cardNumber.length 0) required=true maxlength=16 errorMessages=(hash maxlength="Maximum length exceeded." required="Credit card number is required"
+      ) customValidations=cardNumberValidation onChange=(action (mut cardNumber)) hideAllMessages=true as |input|}}
       {{#if input.isInvalidAndTouched}}
         <div class="md-input-messages-animation md-auto-hide">
           {{#each input.validationErrorMessages as |error index|}}

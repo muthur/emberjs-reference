@@ -13,10 +13,7 @@
   },
   "eslint.enable": true,
   "eslint.options": {
-    "extensions": [
-      ".html",
-      ".js"
-    ]
+    "extensions": [".html", ".js"]
   },
   "eslint.validate": [
     {
