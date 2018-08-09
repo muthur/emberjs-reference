@@ -1,6 +1,6 @@
 {{#paper-form onValidityChange=(action "onValidityChange") as |form|}}
-<div class="layout-column">
-  {{form.input class="flex-100"
+  <div class="layout-column">
+    {{form.input class="flex-100"
     label="Card number"
     type="number"
     value=cardNumber
@@ -12,20 +12,18 @@
     customValidations=cardNumberValidation
     onChange=(action (mut cardNumber))
     }}
-  <div class="layout-row">
-    {{form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}}
-    {{form.input class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
-  </div>
-  {{form.input class="flex-100"
-    label="Name on Card"
+    <div class="layout-row">
+      {{form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate))}} {{form.input class="flex-50" label="CVV" type="number" value=cvv onChange=(action (mut cvv))}}
+    </div>
+    {{form.input class="flex-100"
+            label="Name on Card"
     type="string"
     value=nameOnCard
     onChange=(action (mut nameOnCard))}}
-  <div class="layout-row">
-    {{form.input class="flex-50" label="Zip Code" type="string" value=zipCode onChange=(action (mut zipCode))}}
-    {{#form.select
-    class="flex-50" label="Country" options=countries selected=selectedCountry onChange=(action (mut selectedCountry)) as
-    |country|}} {{country.abbrev}} {{/form.select}}
+    <div class="layout-row">
+      {{form.input class="flex-50" label="Zip Code" type="string" value=zipCode onChange=(action (mut zipCode))}}
+      {{#form.select class="flex-50" label="Country" options=countries selected=selectedCountry onChange=(action (mut selectedCountry))
+        as |country|}} {{country.abbrev}} {{/form.select}}
+    </div>
   </div>
-</div>
 {{/paper-form}}
