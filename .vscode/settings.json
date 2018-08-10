@@ -28,5 +28,6 @@
   "eslint.run": "onSave",
   "eslint.autoFixOnSave": true,
   "editor.formatOnSave": true,
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "html.format.indentHandlebars": true
 }

@@ -6,12 +6,19 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     this.countries = [{ abbrev: "US" }, { abbrev: "AUS" }];
-    //TODO: Move the validation methods to a seperate mixin
-    this.cardNumberValidation = [
+    this.cardNumberValidations = [
       {
         message: "Invalid card number",
         validate: cardNumber => {
-          return creditCardValidator.isValidNumber(cardNumber.toString());
+          return creditCardValidator.isValidNumber(cardNumber.toString()); //TODO: Luhn check to be done
+        }
+      }
+    ];
+    this.cvvValidations = [
+      {
+        message: "Invalid CVV number provided",
+        validate: cvvNumber => {
+          return cvvNumber > 200;
         }
       }
     ];
