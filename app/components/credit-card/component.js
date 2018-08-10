@@ -10,7 +10,10 @@ export default Component.extend({
       {
         message: "Invalid card number",
         validate: cardNumber => {
-          return creditCardValidator.isValidNumber(cardNumber.toString()); //TODO: Luhn check to be done
+          return (
+            creditCardValidator.validateLuhn(cardNumber) &&
+            creditCardValidator.isValidNumber(cardNumber.toString())
+          );
         }
       }
     ];
