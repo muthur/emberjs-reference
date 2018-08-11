@@ -38,6 +38,9 @@ export default Component.extend({
         isInvalidAndTouched
       );
       /*eslint-enable */
+    },
+    onCreditCardNumberChange(obj) {
+      console.log(obj);
     }
   }
 

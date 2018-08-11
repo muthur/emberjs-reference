@@ -1,4 +1,10 @@
 {
+  "files.associations": {
+    "*.module": "xml",
+    "*.msbuild": "xml",
+    "*.target": "xml",
+    "*.hbs": "html"
+  },
   "files.exclude": {
     "**/.git": true, // this is a default value
     //"**/node_modules": true, // this excludes all folders

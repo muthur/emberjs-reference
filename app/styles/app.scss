@@ -1,3 +1,42 @@
 $primary: "deep-orange" !default;
 
-@import 'ember-paper';
+@import "ember-paper";
+
+$rootImagePath: "../images/";
+
+.icon-card-visa {
+  background-repeat: no-repeat;
+  background-image: url($rootImagePath+"logo-visa.png");
+  background-size: 62px 40px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  display: block;
+}
+.icon-card-discover {
+  background-repeat: no-repeat;
+  background-image: url($rootImagePath+"logo-discover.png");
+  background-size: 62px 40px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  display: block;
+}
+.icon-card-mastercard {
+  background-repeat: no-repeat;
+  background-image: url($rootImagePath+"logo-mastercard.png");
+  background-size: 62px 40px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  display: block;
+}
+.icon-card-amex {
+  background-repeat: no-repeat;
+  background-image: url($rootImagePath+"logo-amex.png");
+  background-size: 62px 40px;
+  width: 90px;
+  height: 40px;
+  border: none;
+  display: block;
+}

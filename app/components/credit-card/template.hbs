@@ -1,11 +1,16 @@
 {{#paper-form onValidityChange=(action "onValidityChange") as |form|}}
   <div class="layout-column">
-    {{#form.input class="flex-100" label="Card number" type="number" value=cardNumber errors=errors.cardNumber isTouched=(gt
-      errors.cardNumber.length 0) required=true maxlength=16 errorMessages=(hash maxlength="Maximum length exceeded." required="Credit
-  card number is required" ) customValidations=cardNumberValidations onChange=(action (mut cardNumber)) hideAllMessages=true
-      as |input|}}
-      {{ing-paper-input-error input=input}}
-    {{/form.input}}
+    <div class="layout-row">
+      <div class="flex-5">
+        <md-icon class="icon-card-visa md-font material-icons md-default-theme">&nbsp;</md-icon>
+      </div>
+      {{#form.input class="flex-95 md-icon-left" label="Card number" type="number" value=cardNumber errors=errors.cardNumber isTouched=(gt
+        errors.cardNumber.length 0) required=true maxlength=16 errorMessages=(hash maxlength="Maximum length exceeded." required="Credit
+        Card number is required" ) customValidations=cardNumberValidations onChange=(action (mut cardNumber)) hideAllMessages=true
+        as |input|}}
+        {{ing-paper-input-error input=input}}
+      {{/form.input}}
+    </div>
     <div class="layout-row">
       {{#form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate)) hideAllMessages=true
         as |input|}}
@@ -15,6 +20,7 @@
         required="CVV is required" ) customValidations=cvvValidations onChange=(action (mut cvv)) hideAllMessages=true as |input|}}
         {{ing-paper-input-error input=input}}
       {{/form.input}}
+
     </div>
     {{form.input class="flex-100" label="Name on Card" type="string" value=nameOnCard onChange=(action (mut nameOnCard))}}
     <div class="layout-row">
