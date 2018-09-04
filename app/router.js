@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('users');
   this.route('payment-detail');
+  this.route('phone-number');
 });
 
 export default Router;
