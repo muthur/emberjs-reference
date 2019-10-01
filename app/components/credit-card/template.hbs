@@ -12,6 +12,9 @@
       {{/form.input}}
     </div>
     <div class="layout-row">
+      {{paper-input-mask type='text' mask='99/9999' placeholder="mm/yyyy" value=value onChange=(action (mut value))}}
+    </div>
+    <div class="layout-row">
       {{#form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate)) hideAllMessages=true
         as |input|}}
         {{ing-paper-input-error input=input}}
