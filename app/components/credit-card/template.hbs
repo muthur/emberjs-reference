@@ -4,23 +4,50 @@
       <div class="flex-5">
         <md-icon class="icon-card-visa md-font material-icons md-default-theme">&nbsp;</md-icon>
       </div>
-      {{#form.input class="flex-95 md-icon-left" label="Card number" type="number" value=cardNumber errors=errors.cardNumber isTouched=(gt
-        errors.cardNumber.length 0) required=true maxlength=16 errorMessages=(hash maxlength="Maximum length exceeded." required="Credit
-        Card number is required" ) customValidations=cardNumberValidations onChange=(action (mut cardNumber)) hideAllMessages=true
+      {{#form.input class="flex-95 md-icon-left"
+        label="Card number"
+        type="number"
+        value=cardNumber
+        errors=errors.cardNumber
+        isTouched=(gt errors.cardNumber.length 0)
+        required=true
+        maxlength=16
+        errorMessages=(hash maxlength="Maximum length exceeded." required="Credit Card number is required" )
+        customValidations=cardNumberValidation
+        onChange=(action "onCreditCardFieldChange" "cardNumber")
+        onValidityChange=(action "onValidityChange")
+        hideAllMessages=true
         as |input|}}
         {{ing-paper-input-error input=input}}
       {{/form.input}}
     </div>
     <div class="layout-row">
-      {{paper-input-mask type='text' mask='99/9999' placeholder="mm/yyyy" value=value onChange=(action (mut value))}}
+      {{paper-input-mask
+          type='text'
+          mask='99/9999'
+          placeholder="mm/yyyy"
+          customValidations=expirationDateValidations
+          value=(readonly expirationDate)
+          onChange=(action "onCreditCardFieldChange" "expirationDate")
+          onValidityChange=(action "onValidityChange")
+      }}
     </div>
     <div class="layout-row">
-      {{#form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate)) hideAllMessages=true
+      <!-- {{#form.input class="flex-50" label="Expiry Date" type="date" value=expiryDate onChange=(action (mut expiryDate)) hideAllMessages=true
         as |input|}}
         {{ing-paper-input-error input=input}}
-      {{/form.input}}
-      {{#form.input class="flex-50" label="CVV" type="number" value=cvv required=true maxlength=4 errorMessages=(hash maxlength="Invalid CVV provided"
-        required="CVV is required" ) customValidations=cvvValidations onChange=(action (mut cvv)) hideAllMessages=true as |input|}}
+      {{/form.input}} -->
+      {{#form.input class="flex-50"
+        label="CVV"
+        type="number"
+        value=(readonly cvv)
+        required=true
+        maxlength=4
+        onValidityChange=(action "onValidityChange")
+        errorMessages=(hash maxlength="Invalid CVV provided" required="CVV is required")
+        customValidations=cvvValidations
+        onChange=(action "onCreditCardFieldChange" "cvv")
+        hideAllMessages=true as |input|}}
         {{ing-paper-input-error input=input}}
       {{/form.input}}
 
